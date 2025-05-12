@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100;
+  }
+}
+
+@layer utilities {
+  @keyframes grow-up {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  
+  @keyframes grow-right {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes draw-line {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes pie-chart-fill {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .animate-grow-up {
+    animation: grow-up 0.8s ease-out forwards;
+  }
+  
+  .animate-grow-right {
+    animation: grow-right 0.8s ease-out forwards;
+    transform-origin: left;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+  
+  .animate-draw-line {
+    animation: draw-line 2s ease-out forwards;
+  }
+  
+  .animate-pie-chart-fill {
+    animation: pie-chart-fill 1s ease-out forwards;
+    transform-origin: center;
+  }
+}
